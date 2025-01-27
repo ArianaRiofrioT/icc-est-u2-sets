@@ -1,4 +1,8 @@
 import java.util.Set;
+import java.util.TreeSet;
+
+import models.Contacto;
+import utils.ContactoComparator;
 
 public class App {
 
@@ -46,10 +50,32 @@ public class App {
         }
     }
 
+
+
+    
+    // -----------------TAREA - EJERCICIO--------------------
+    private static void runContactos() {
+        Set<Contacto> agenda = new TreeSet<>(new ContactoComparator());
+
+        // Agregamos algunos contactos
+        agenda.add(new Contacto("Pedro", "Lopez", "222222222"));
+        agenda.add(new Contacto("Luis", "Perez", "111111111"));
+        agenda.add(new Contacto("Ana", "Perez", "987654321"));
+        agenda.add(new Contacto("Pedro", "Lopez", "123456789"));
+
+
+
+        System.out.println("----Contactos ordenados por apellido y luego por nombre----");
+        for (Contacto contacto : agenda) {
+            System.out.println(contacto);
+        }
+    }
+
     public static void main(String[] args) {
-        runHasSet();
-        runLinkedHasSet();
-        runTreeSet();
-        runTreeSetPorTamaño();
+       // runHasSet();
+        //runLinkedHasSet();
+        //runTreeSet();
+        //runTreeSetPorTamaño();
+        runContactos();
     }
 }
